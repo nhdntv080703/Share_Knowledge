@@ -27,7 +27,7 @@ B-Tree index có các đặc điểm sau:
 
        • B-Tree index được sử dụng cho những column trong bảng khi muốn tìm kiếm 1 giá trị nằm trong khoảng nào đó. Ví dụ: tìm kiếm những sinh viên có điểm Toán từ 5-9.
 
-       2. Hash Index
+      2. Hash Index
 Hash index có các đặc điểm sau:
 
        • Hash index có một vài đặc điểm khác biệt so với Btree index.
