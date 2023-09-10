@@ -44,18 +44,18 @@ Hash index có các đặc điểm sau:
 
 4. Cách sử dụng index
 
-       • Tạo index trên một bảng:
+• Tạo index trên một bảng:
 CREATE UNIQUE INDEX index_name
 ON table_name;
 
 Unique index được sử dụng không chỉ để tăng hiệu suất, mà còn cho mục đích toàn vẹn dữ liệu. Một Unique index không cho phép bất kỳ bản sao giá trị nào được chèn vào trong bảng.
 
-       • Tạo index cho cột được chỉ rõ trong bảng:
+• Tạo index cho cột được chỉ rõ trong bảng:
 CREATE UNIQUE INDEX index_name
 ON table_name(column 1, column 2,...);
 Lưu ý: Trong trường hợp không chỉ rõ tên column được đánh index trong bảng, mysql sẽ mặc định đánh index trên primary key hoặc các ràng buộc mang tính duy nhất trong bảng databases.
 
-       • Các lệnh thêm index:
+• Các lệnh thêm index:
 1. Thêm index cho bảng, với index mang tính duy nhất và không thể null
 ALTER TABLE tbl_name ADD PRIMARY KEY (olumn 1, column 2,..)
 2. Thêm index cho bảng, với index mang tính duy nhất nhưng có thể null
