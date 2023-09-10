@@ -1,14 +1,17 @@
 ﻿Chỉ mục (index) trong mysql
 
 1. Khái niệm về chỉ mục (index) trong mysql
+
        • Chỉ mục (Index) là bảng tra cứu đặc biệt mà Database Search Engine có thể sử dụng để tăng nhanh thời gian và hiệu suất thu thập dữ liệu. Hiểu đơn giản, một chỉ mục là một con trỏ tới dữ liệu trong một bảng. Một chỉ mục trong một Database là tương tự như một chỉ mục trong Mục lục của cuốn sách.
        • Ví dụ, nếu bạn muốn tham chiếu tất cả các trang trong một cuốn sách về một chủ đề nào đó, đầu tiên bạn nghĩ ngay đến mục lục của nó, mà liệt kê tất cả các chương, chủ đề theo thứ tự và sau đó được tham chiếu tới một hoặc nhiều trang cụ thể. Khi đã có mục lục của cuốn sách, việc tìm kiếm trang sách đó sẽ nhanh chóng và đỡ tốn công hơn rất nhiều so với việc bạn phải lật từng trang.
        
 2. Khi nào cần đánh chỉ mục cho bảng
+
        • Bất cứ khi nào bạn thay đổi cấu trúc bảng dữ liệu bạn đều cần Add Index lại, giống như khi bạn thay đổi nội dung quyển sách, bạn cần phải làm lại mục lục. Vậy hãy cân nhắc, nếu Database của bạn sử dụng INSERT hay UPDATE nhiều hơn là SELECT thì Index chỉ làm chậm thêm mà thôi.
        • Lưu ý: Index giống như các tab. Chúng làm cho nó nhanh hơn để bạn có thể tìm thấy những dữ liệu bạn cần phù hợp với một số tiêu chí nhất định. Để tạo chỉ mục tốt bạn cần phải suy nghĩ về cách bạn sẽ được truy vấn dữ liệu như thế nào. Khi bạn có thông tin này, bạn sẽ có thể tạo index và nó sẽ tăng tốc độ truy vấn của bạn ngay lập tức.
        
 3. Các loại index trong mysql
+
        Ở các post trước, các tác giả đã nói cụ thể về cú pháp sử dụng index nên trong post này, tôi xin nói thêm về các loại index trong mysql
 MySQL cung cấp 3 kiểu index khác nhau cho data đó là B-Tree, Hash và R-Tree index. Hiểu rõ về các kiểu index này sẽ giúp chúng ta tạo ra các loại index trong bảng một cách hiệu quả hơn. Do R-Tree được sử dụng cho các loại dữ liệu không gian spacial data và thường ít khi gặp phải nên bài viết này chúng ta sẽ tập chung so sánh 2 loại index là B-Tree và Hash:
 1. B-Tree Index
@@ -18,7 +21,7 @@ B-Tree index có các đặc điểm sau:
        • Khi truy vấn dữ liệu thì việc tìm kiếm trong B-Tree là 1 quá trình đệ quy, bắt đầu từ root node và tìm kiếm tới branch và leaf, đến khi tìm được tất cả dữ liệu - thỏa mãn với điều kiện truy vấn thì mới dùng lại.
        • B-Tree index được sử dụng cho những column trong bảng khi muốn tìm kiếm 1 giá trị nằm trong khoảng nào đó. Ví dụ: tìm kiếm những sinh viên có điểm Toán từ 5-9.
        
-2. Hash Index
+       2. Hash Index
 Hash index có các đặc điểm sau:
        • Hash index có một vài đặc điểm khác biệt so với Btree index.
        • Dữ liệu index được tổ chức theo dạng Key - Value được liên kết với nhau.
